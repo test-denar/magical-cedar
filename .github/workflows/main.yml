@@ -15,7 +15,7 @@ jobs:
         with:
           urls: |
             https://magical-cedar-7feef.netlify.com
-            https://magical-cedar-7feef.netlify.com/about/
+            https://magical-cedar-7feef.netlify.com/about
             https://magical-cedar-7feef.netlify.com/style-guide/
           logLevel: 'info'
           slackWebhookUrl: ${{ secrets.SLACK_WEBHOOK_URL }}

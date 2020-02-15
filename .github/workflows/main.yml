@@ -1,0 +1,25 @@
+# This is a basic fully hermetic run of Lighthouse, that saves results as run artifacts.
+name: LHCI-upload-artifact
+on: push
+jobs:
+  assert-on-budget:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Use node 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Run Lighthouse on urls
+        uses: treosh/lighthouse-ci-action@netlify
+        with:
+          urls: |
+            https://treo.sh/
+            https://treo.sh/demo
+          logLevel: 'info'
+          slackWebhookUrl: ${{ secrets.SLACK_WEBHOOK_URL }}
+          applicationGithubToken: ${{ secrets.GITHUB_TOKEN }}
+          personalGithubToken: ${{ secrets.GITHUB_TOKEN_PERMISSIONS }}
+          budgetPath: '.github/budget.json'
+          notifications: |
+            slack

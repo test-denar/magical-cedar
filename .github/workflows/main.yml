@@ -17,7 +17,7 @@ jobs:
           slackWebhookUrl: ${{ secrets.SLACK_WEBHOOK_URL }}
           applicationGithubToken: ${{ secrets.GITHUB_TOKEN }}
           personalGithubToken: ${{ secrets.GITHUB_TOKEN_PERMISSIONS }}
-          netlifSite: 'magical-cedar-7feef.netlify.com'
+          netlifySite: 'magical-cedar-7feef.netlify.com'
           budgetPath: '.github/budget.json'
           notifications: |
             slack

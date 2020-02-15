@@ -10,7 +10,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - name: Run Lighthouse on urls
+      - name: Run Lighthouse on urls!
         uses: treosh/lighthouse-ci-action@netlify
         with:
           logLevel: 'info'

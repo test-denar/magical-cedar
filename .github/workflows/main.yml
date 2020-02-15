@@ -13,13 +13,11 @@ jobs:
       - name: Run Lighthouse on urls
         uses: treosh/lighthouse-ci-action@netlify
         with:
-          urls: |
-            https://treo.sh/
-            https://treo.sh/demo
           logLevel: 'info'
           slackWebhookUrl: ${{ secrets.SLACK_WEBHOOK_URL }}
           applicationGithubToken: ${{ secrets.GITHUB_TOKEN }}
           personalGithubToken: ${{ secrets.GITHUB_TOKEN_PERMISSIONS }}
+          netlifSite: 'magical-cedar-7feef.netlify.com'
           budgetPath: '.github/budget.json'
           notifications: |
             slack

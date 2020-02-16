@@ -3,4 +3,8 @@ publish = "_site"
 command = "./stackbit-build.sh"
 
 [context.deploy-preview]
-command = "./stackbit-build.sh"
+  command = "yarn build:preview"
+
+[context.branch-deploy]
+  command = "yarn build:preview"
+

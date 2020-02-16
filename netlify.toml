@@ -1,3 +1,6 @@
 [build]
 publish = "_site"
 command = "./stackbit-build.sh"
+
+[context.deploy-preview]
+command = "./stackbit-build.sh"

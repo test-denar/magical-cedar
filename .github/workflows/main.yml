@@ -10,18 +10,21 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
+      - name: Waiting for 200 from the Netlify Preview
+        uses: jakepartusch/wait-for-netlify-action@v1
+        id: waitFor200
+        with:
+          site_name: "magical-cedar-7feef"
       - name: Run Lighthouse on urls!
-        uses: treosh/lighthouse-ci-action@netlify
+        uses: treosh/lighthouse-ci-action@next
         with:
           urls: |
             https://magical-cedar-7feef.netlify.com
             https://magical-cedar-7feef.netlify.com/about
             https://magical-cedar-7feef.netlify.com/style-guide/
-          logLevel: 'info'
           slackWebhookUrl: ${{ secrets.SLACK_WEBHOOK_URL }}
           applicationGithubToken: ${{ secrets.GITHUB_TOKEN }}
           personalGithubToken: ${{ secrets.GITHUB_TOKEN_PERMISSIONS }}
-          netlifySite: 'magical-cedar-7feef.netlify.com'
           budgetPath: '.github/budget.json'
           notifications: |
             slack

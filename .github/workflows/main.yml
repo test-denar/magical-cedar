@@ -15,7 +15,6 @@ jobs:
         id: waitFor200
         with:
           site_name: "magical-cedar-7feef"
-          max_timeout: 6000
       - name: Run Lighthouse on urls!
         uses: treosh/lighthouse-ci-action@next
         with:
